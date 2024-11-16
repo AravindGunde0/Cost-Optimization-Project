@@ -20,7 +20,6 @@ resource "aws_instance" "jenkins" {
   subnet_id               = var.subnet_id_1a
   vpc_security_group_ids  = [sg-077fced5d5205d41f"]
   iam_instance_profile    = var.iam_instance_profile
-  #user_data              = file("/Users/Lenovo/)
   user_data = <<-EOF
   #!/bin/bash
   sudo hostnamectl set-hostname "jenkins.cloudbinary.io"
