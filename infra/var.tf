@@ -14,5 +14,5 @@ variable "subnet_id_1a" {
   default = "subnet-015700f52fbfd0c75"
 }
 variable "iam_instance_profile" {
-    default = "p1"
+  default = "p1"
 }

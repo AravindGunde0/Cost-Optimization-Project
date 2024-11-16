@@ -1,7 +1,7 @@
 terraform {
   required_providers {
     aws = {
-      source = "hashicorp/aws"
+      source  = "hashicorp/aws"
       version = "5.76.0"
     }
   }
@@ -9,18 +9,18 @@ terraform {
 
 provider "aws" {
   # Configuration options
-  region = "us-east-1"
+  region  = "us-east-1"
   profile = "default"
 }
 
 resource "aws_instance" "jenkins" {
-  ami                     = var.ami
-  instance_type           = var.instance_type
-  key_name                = var.key_name
-  subnet_id               = var.subnet_id_1a
-  vpc_security_group_ids  = [sg-077fced5d5205d41f"]
-  iam_instance_profile    = var.iam_instance_profile
-  user_data = <<-EOF
+  ami                    = var.ami
+  instance_type          = var.instance_type
+  key_name               = var.key_name
+  subnet_id              = var.subnet_id_1a
+  vpc_security_group_ids = ["sg-0baa39cd22f153dab"]
+  iam_instance_profile   = var.iam_instance_profile
+  user_data              = <<-EOF
   #!/bin/bash
   sudo hostnamectl set-hostname "jenkins.cloudbinary.io"
   echo "`hostname -I | awk '{ print $1 }'` `hostname`" >> /etc/hosts
